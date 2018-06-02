@@ -1,0 +1,57 @@
+{
+    "input form": {
+        "prefix": ",i",
+        "body": [
+            "<div class=\"form-group\">",
+            "\t<label for=\"help-text-input\" class=\"form-control-label\">$1</label>",
+            "\t<div class=\"input-group\">",
+            "\t\t<div class=\"input-group-prepend\">",
+            "\t\t\t<span class=\"input-group-text\"><i class=\"fa fa-$2\"></i></span>",
+            "\t\t</div>",
+            "\t<input id=\"help-text-input\" class=\"form-control\" placeholder=\"$1\" name=\"$3\">",
+            "\t</div>",
+            "</div>"
+        ],
+        "description": "creates a input boilerplate"
+    },
+    "boilerplate": {
+        "prefix": ",b",
+        "body": [
+            "@extends('layouts.app')",
+            "@section('css')",
+            "{{-- Custom CSS --}}",
+            "@endsection",
+            "@section('content')",
+            "$1",
+            "@endsection",
+            "@section('scripts')",
+            "{{-- Custom JS --}}",
+            "@endsection",
+            "",
+        ],
+        "description": "boilerplate template for a page"
+    },
+    "patch": {
+        "prefix": ",p",
+        "body": [
+            "{{ csrf_field() }}",
+            "{{ method_field('PATCH') }}"
+        ]
+    },
+    "form": {
+        "prefix": ",f",
+        "body": [
+            "<form action=\"\" method=\"POST\">",
+            "\t{{ csrf_field() }}",
+            "\t{{ method_field('PATCH') }}",
+            "\t@if($$errors->all())",
+            "\t@include('responses.error')",
+            "\t@endif",
+            "\t@if (Session::has('msg'))",
+            "\t@include('responses.success')",
+            "\t@endif",
+            "\t$1",
+            "</form>",
+        ]
+    }
+}
