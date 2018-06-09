@@ -1,0 +1,12 @@
+{ 
+"function": {
+		"prefix": ",f",
+		"body": [
+			"public function $1()",
+			"{",
+			"\treturn $$this->$2('App\\ $3','$4_id','id');",
+			"}"
+		],
+		"description": "creates a public function for relationship"
+	}
+}
